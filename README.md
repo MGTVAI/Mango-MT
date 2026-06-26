@@ -17,9 +17,9 @@ Global long-form video expansion requires robust multilingual subtitle translati
 ## News 🚀🚀🚀
 
 
-- **2026/06/26** : 🚀 We introduce Mango-MT, an advanced machine learning large language model (MT) that demonstrates superior overall translation performance on film and television translation for 11 languages. Mango-MT achieves SoTA performance on FTT-MT, and our model matches or outperforms commercial models across most languages on Flores+.
+- **2026/06/26** : 🚀 We introduce Mango-MT, an advanced machine learning large language model (MT) that demonstrates superior overall translation performance on film and television translation for 11 languages. Mango-MT achieves SoTA performance on FT-MT, and our model matches or outperforms commercial models across most languages on Flores+.
   
-- **2026/06/22** : 🔥 We open-source the benchamark (FTT-MT) constructed on professional film and television translation data.
+- **2026/06/22** : 🔥 We open-source the benchamark (FT-MT) constructed on professional film and television translation data.
 
 
 
