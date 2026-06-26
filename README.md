@@ -111,7 +111,7 @@ Download [eval data](https://huggingface.co/datasets/xxx) and put in /mt/benchma
 Translate with Mango-MT model by using following .py :
 
 ```
-python mt/benchmark/translate_with_mango_mt.py --input /mt/benchmark/data/test_corpus.xlsx --output /mt/benchmark/result_1.xlsx
+python /mt/benchmark/translate_with_mango_mt.py --input /mt/benchmark/data/test_corpus.xlsx --output /mt/benchmark/result_1.xlsx
 ```
 
 #### Step 3
