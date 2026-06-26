@@ -226,4 +226,4 @@ If you love open source and enjoy tinkering, whether for learning purposes or to
 Thanks to the support of subtitle translation from Beijing International Studies University 
 
 # License
-This framework is licensed under the Apache License (Version 2.0). For models and datasets, please refer to the original resource page and follow the corresponding License.
+This framework is licensed under the Apache License. For models and datasets, please refer to the original resource page and follow the corresponding License.
