@@ -162,7 +162,7 @@ Download the devtest datasets of following languages from [flores devtest](https
 Put the downloaded cmn_Hans.jsonl into the src_data/, translate Chinese into 11 languages by using following .py based on our model, the translated results will be saved into the translated_data/:
 
 ```
-cd /mt/flores200 && python translate_flores_with_Mango_MT.py
+cd /mt/flores200 && python translate_flores_with_mango_mt.py
 ```
 
 Similarly, translate Chinese into 11 languages by using following .py based on gpt, deepseek, gemini, the translated results will be saved into the translated_data/:
