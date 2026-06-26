@@ -104,14 +104,14 @@ To enable horizontal comparison of different models and translation batches on t
 
 ### Steps
 #### Step 1
-Download [eval data](https://huggingface.co/datasets/xxx) and put in /benchmark/data/test_corpus.xlsx
+Download [eval data](https://huggingface.co/datasets/xxx) and put in /mt/benchmark/data/test_corpus.xlsx
 
 
 #### Step 2
 Translate with Mango-MT model by using following .py :
 
 ```
-python benchmark/translate_with_mango_mt.py --input /benchmark/data/test_corpus.xlsx --output /benchmark/result_1.xlsx
+python mt/benchmark/translate_with_mango_mt.py --input /mt/benchmark/data/test_corpus.xlsx --output /mt/benchmark/result_1.xlsx
 ```
 
 #### Step 3
@@ -119,14 +119,14 @@ Translate with DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4 by using following .py :
 
 
 ```
-python benchmark/translate_with_api.py --input /benchmark/data/result_1.xlsx --output /benchmark/result_2.xlsx
+python /mt/benchmark/translate_with_api.py --input /mt/benchmark/data/result_1.xlsx --output /mt/benchmark/result_2.xlsx
 ```
 
 #### Step 4
 Evaluate the translated data to get the final evaluation score by using:
 
 ```
-python benchmark/evaluate.py --input /benchmark/result_2.xlsx
+python /mt/benchmark/evaluate.py --input /mt/benchmark/result_2.xlsx
 ```
 
 ### Performance 
@@ -162,13 +162,13 @@ Download the devtest datasets of following languages from [flores devtest](https
 Put the downloaded cmn_Hans.jsonl into the src_data/, translate Chinese into 11 languages by using following .py based on our model, the translated results will be saved into the translated_data/:
 
 ```
-cd flores200 && python translate_flores_with_Mango_MT.py
+cd /mt/flores200 && python translate_flores_with_Mango_MT.py
 ```
 
 Similarly, translate Chinese into 11 languages by using following .py based on gpt, deepseek, gemini, the translated results will be saved into the translated_data/:
 
 ```
-cd flores200 && python translate_flores_with_api.py
+cd /mt/flores200 && python translate_flores_with_api.py
 ```
 #### Step 3
 we adopt two core universal metrics (BLEU, chrF++ ) to quantify translation quality by using following .py:
