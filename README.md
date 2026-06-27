@@ -101,7 +101,7 @@ To enable horizontal comparison of different models and translation batches on t
    As a neural evaluation model, COMET integrates source text, human reference translation and machine translation output to predict the consistency between translations and human quality judgments. It is suitable for measuring whether the semantics of the source text are accurately preserved in translations.
    
 5. **BLEU-2：**
-   BLEU-2 provides supplementary information on local surface matching and phrase consistency. Thus, its weight is doubled in the weighted composite score.
+   BLEU-2 provides supplementary information on local surface matching and phrase consistency. 
 
 
 ### Steps
