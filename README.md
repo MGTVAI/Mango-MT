@@ -1,3 +1,5 @@
+English | [简体中文](README_CN.md)
+
 # Mango-MT: A 9B Model Bridging the Gap with Closed-Source Audiovisual MT
 
 
