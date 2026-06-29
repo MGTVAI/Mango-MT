@@ -5,11 +5,16 @@ import pandas as pd
 
 from eval.translate_eval import ComprehensiveTranslationEvaluator
 
-ANSWER_COLUMN = "answer"
+ANSWER_COLUMNS = [
+    "answer",
+    "answer_deepseek",
+    "answer_gpt",
+    "answer_gemini",
+]
 OUTPUT_DIR = Path(__file__).parent / "eval_results"
 
 
-def load_dataset(path: Path, answer_column: str = ANSWER_COLUMN) -> pd.DataFrame:
+def load_dataset(path: Path, answer_column: str) -> pd.DataFrame:
     print(f"读取数据: {path}")
     df = pd.read_excel(path)
 
@@ -48,29 +53,29 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="输入 Excel 数据文件路径",
     )
+    parser.add_argument(
+        "--columns",
+        nargs="*",
+        default=None,
+        help="要评估的机器译文列，默认依次评估 answer / answer_deepseek / answer_gpt / answer_gemini",
+    )
     return parser.parse_args()
 
 
-def main():
-    args = parse_args()
-    data_file = args.input.expanduser().resolve()
+def evaluate_column(
+    data_file: Path,
+    answer_column: str,
+    evaluator: ComprehensiveTranslationEvaluator,
+) -> None:
+    print("\n" + "=" * 60)
+    print(f"评估列: {answer_column}")
+    print("=" * 60)
 
-    if not data_file.exists():
-        raise FileNotFoundError(f"数据文件不存在: {data_file}")
-
-    dataset = load_dataset(data_file)
-
-    evaluator = ComprehensiveTranslationEvaluator(
-        enable_comet=True,
-        enable_embedding=True,
-        use_local_embedding=False,
-        use_local_comet=False,
-    )
-
+    dataset = load_dataset(data_file, answer_column)
     results, stats = evaluator.evaluate_translations(dataset)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    stem = f"{data_file.stem}_{ANSWER_COLUMN}"
+    stem = f"{data_file.stem}_{answer_column}"
     detail_path = OUTPUT_DIR / f"{stem}_valid_data.csv"
     stats_path = OUTPUT_DIR / f"{stem}_results.csv"
 
@@ -81,9 +86,35 @@ def main():
     print(results.head())
     print("\n统计报告:")
     print(stats)
-    print(f"\n结果已保存:")
+    print("\n结果已保存:")
     print(f"  详细数据: {detail_path}")
     print(f"  统计报告: {stats_path}")
+
+def main():
+    args = parse_args()
+    data_file = args.input.expanduser().resolve()
+
+    if not data_file.exists():
+        raise FileNotFoundError(f"数据文件不存在: {data_file}")
+
+    answer_columns = args.columns or ANSWER_COLUMNS
+    df_columns = pd.read_excel(data_file, nrows=0).columns.tolist()
+
+    missing_columns = [col for col in answer_columns if col not in df_columns]
+    if missing_columns:
+        raise ValueError(
+            f"输入文件缺少以下机器译文列: {missing_columns}，当前列名: {df_columns}"
+        )
+
+    evaluator = ComprehensiveTranslationEvaluator(
+        enable_comet=True,
+        enable_embedding=True,
+        use_local_embedding=False,
+        use_local_comet=False,
+    )
+
+    for answer_column in answer_columns:
+        evaluate_column(data_file, answer_column, evaluator)
 
 
 if __name__ == "__main__":
