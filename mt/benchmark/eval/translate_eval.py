@@ -19,11 +19,9 @@ COMET_SERVICE_URL = "http://10.200.16.79:8088/comet"
 
 # 评估权重配置
 WEIGHTS = {
-    "semantic_similarity": 0.2,  # 语义相似度
-    "bleu_score": 0.25,  # BLEU-2评分
-    "comet_score": 0.35,  # COMET评分
-    "timeline_accuracy": 0.1,  # 时间轴准确度
-    "format_compliance": 0.1,  # 格式合规度
+    "semantic_similarity": 0.25,  # 语义相似度
+    "bleu_score": 0.31,  # BLEU-2评分
+    "comet_score": 0.44,  # COMET评分
 }
 
 
@@ -157,8 +155,6 @@ class ComprehensiveTranslationEvaluator:
             "语义相似度": float(np.mean(lang_data["semantic_similarity"])),
             "BLEU-2": float(np.mean(lang_data["bleu_score"])),
             "COMET": float(np.mean(lang_data["comet_score"])),
-            "时间轴": float(np.mean(lang_data["timeline_accuracy"])),
-            "格式": float(np.mean(lang_data["format_compliance"])),
             "综合分数": float(np.mean(lang_data["final_score"])),
         }
 
@@ -244,7 +240,7 @@ class ComprehensiveTranslationEvaluator:
             else:
                 print("使用远程COMET服务...")
                 # 使用远程服务
-                batch_size = 128
+                batch_size = 256
                 comet_scores = []
                 for i in tqdm(range(0, len(comet_data), batch_size), desc="计算COMET分数"):
                     batch = comet_data[i:i + batch_size]
@@ -330,13 +326,7 @@ class ComprehensiveTranslationEvaluator:
             print(f"计算语义相似度错误: {e}")
             return [0.0] * len(dataset)
 
-    def compute_timeline_accuracy(self, dataset: pd.DataFrame) -> List[float]:
-        """计算时间轴准确度分数，在srt中评估, dataframe中不评估"""
-        return [1.0] * len(dataset)
 
-    def compute_format_compliance(self, dataset: pd.DataFrame) -> List[float]:
-        """计算格式合规度分数，在srt中评估, dataframe中不评估"""
-        return [1.0] * len(dataset)
 
     def evaluate_translations(self, dataset: pd.DataFrame) -> Tuple[pd.DataFrame, Dict]:
         """执行完整的综合翻译评估流程
@@ -362,15 +352,13 @@ class ComprehensiveTranslationEvaluator:
         valid_data["semantic_similarity"] = self.compute_semantic_similarity(valid_data)
         valid_data["bleu_score"] = self.compute_bleu_scores(valid_data)
         valid_data["comet_score"] = self.compute_comet_scores(valid_data)
-        valid_data["timeline_accuracy"] = self.compute_timeline_accuracy(valid_data)
-        valid_data["format_compliance"] = self.compute_format_compliance(valid_data)
+
         # 计算加权总分
         valid_data["final_score"] = (
             valid_data["semantic_similarity"] * WEIGHTS["semantic_similarity"]
-            + valid_data["bleu_score"] * WEIGHTS["bleu_score"] * 2
+            + valid_data["bleu_score"] * WEIGHTS["bleu_score"] 
             + valid_data["comet_score"] * WEIGHTS["comet_score"]
-            + valid_data["timeline_accuracy"] * WEIGHTS["timeline_accuracy"]
-            + valid_data["format_compliance"] * WEIGHTS["format_compliance"]
+ 
         )
         # 生成统计报告
         stats_df = self._generate_statistics(valid_data)
@@ -398,20 +386,18 @@ class ComprehensiveTranslationEvaluator:
         print(f"\n=== 综合翻译质量评估报告 ===")
         print(f"评估样本数: {overall['样本数']}")
         print(f"\n总体评分:")
-        print(f"| 语言 | 样本数 | 语义相似度 | BLEU-2 | COMET | 时间轴 | 格式 | 综合分数 |")
-        print("|------|--------|--------|--------|-------|--------|--------|--------|")
+        print(f"| 语言 | 样本数 | 语义相似度 | BLEU-2 | COMET | 综合分数 |")
+        print("|------|--------|--------|--------|-------|--------|")
         print(
             f"|       | {len(data)} | {overall['语义相似度']:.4f} | {overall['BLEU-2']:.4f} | "
-            f"{overall['COMET']:.4f} | {overall['时间轴']:.4f} | "
-            f"{overall['格式']:.4f} | {overall['综合分数']:.4f} |"
+            f"{overall['COMET']:.4f} | {overall['综合分数']:.4f} |"
         )
 
         for _, row in stats_df.iloc[1:].iterrows():
             print(
                 f"| {row['语言']} | {row['样本数']} | "
                 f"{row['语义相似度']:.4f} | {row['BLEU-2']:.4f} | "
-                f"{row['COMET']:.4f} | {row['时间轴']:.4f} | "
-                f"{row['格式']:.4f} | {row['综合分数']:.4f} |"
+                f"{row['COMET']:.4f} | {row['综合分数']:.4f} |"
             )
 
         # self._print_sample_translations(data)
