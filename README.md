@@ -115,7 +115,7 @@ Download [eval data](https://huggingface.co/datasets/xxx) and put in /mt/benchma
 Translate with Mango-MT model by using following .py :
 
 ```
-python /mt/benchmark/translate_with_mango_mt.py --input /mt/benchmark/data/test_corpus.xlsx --output /mt/benchmark/result_1.xlsx
+python /mt/benchmark/translate_with_mango_mt.py --input /mt/benchmark/data/test_corpus.xlsx --output /mt/benchmark/mango.xlsx
 ```
 
 #### Step 3
@@ -123,14 +123,14 @@ Translate with DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4 by using following .py :
 
 
 ```
-python /mt/benchmark/translate_with_api.py --input /mt/benchmark/data/result_1.xlsx --output /mt/benchmark/result_2.xlsx
+python /mt/benchmark/translate_with_api.py --input /mt/benchmark/data/mango.xlsx --output /mt/benchmark/mango_deepseek_gemini_gpt.xlsx
 ```
 
 #### Step 4
 Evaluate the translated data to get the final evaluation score by using:
 
 ```
-python /mt/benchmark/evaluate.py --input /mt/benchmark/result_2.xlsx
+python /mt/benchmark/evaluate.py --input /mt/benchmark/mango_deepseek_gemini_gpt.xlsx
 ```
 
 ### Performance 
