@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ```
 
 ## Model Weights
-Model checkpoints are accessible from xxx
+Model checkpoints are accessible from [Hugging Face](https://huggingface.co/MGTV-AI/Mango-MT-9B)
 
 ## Usage
 
