@@ -10,7 +10,7 @@ English | [简体中文](README_CN.md)
 
 # Introduction
 
-Global long-form video expansion requires robust multilingual subtitle translation, but generic MT fails at fragmented lines, timeline constraints and plot context for mass production. We introduce Mango-MT, an 11-language audiovisual subtitle translator paired with the FT-MT benchmark. Evaluations across all languages show it outperforms GPT, Gemini and DeepSeek with steady timeline compliance, consistent semantics and industrial scalability, see the [technical report](Technical_Report.pdf) for details. Our system holds four key advantages over prior work:
+Global long-form video expansion requires robust multilingual subtitle translation, but generic MT fails at fragmented lines, timeline constraints and plot context for mass production. We introduce Mango-MT with 9B parameter size, an 11-language audiovisual subtitle translator paired with the benchmark called Mango-SubBench. Evaluations across all languages show it outperforms GPT, Gemini and DeepSeek with steady timeline compliance, consistent semantics and industrial scalability, see the [technical report](Technical_Report.pdf) for details. Our system holds four key advantages over prior work:
 
 - **Scenario-oriented & Multilingual Optimization**: Professionally optimized for 11 different languages, perfectly adapting to complex industrial rules of video subtitle translation.
 - **Context-aware Translation Mechanism**: Leverages global context modeling to stabilize plot logic and consistent character appellation translation.
@@ -21,9 +21,9 @@ Global long-form video expansion requires robust multilingual subtitle translati
 ## News 🚀🚀🚀
 
 
-- **2026/06/26** : 🚀 We introduce Mango-MT, an advanced machine learning large language model (MT) that demonstrates superior overall translation performance on film and television translation for 11 languages. Mango-MT achieves SoTA performance on FT-MT, and our model matches or outperforms commercial models across most languages on Flores+.
+- **2026/06/26** : 🚀 We introduce Mango-MT, an advanced machine learning large language model (MT) that demonstrates superior overall translation performance on film and television translation for 11 languages. Mango-MT achieves SoTA performance on Mango-SubBench, and our model matches or outperforms commercial models across most languages on Flores+.
   
-- **2026/06/22** : 🔥 We open-source the benchamark (FT-MT) constructed on professional film and television translation data.
+- **2026/06/22** : 🔥 We open-source the benchamark (Mango-SubBench) constructed on professional film and television translation data.
 
 
 
@@ -69,7 +69,7 @@ vllm serve model_dir --port 8000 --tensor-parallel-size 1 --max-model-len 4096 -
 
 ## Benchmark
 
-### FT-MT
+### Mango-SubBench
 
 Audiovisual subtitle translation evaluation prioritizes practical delivery standards for global long-form videos rather than mere similarity to human references. Qualified subtitles require simultaneous compliance with semantic accuracy, natural expression, standardized segmentation, valid timestamps and traceable quality, which cannot be fully assessed by single automatic metrics. To mitigate this limitation, we collaborate with Beijing International Studies University to build a dedicated audiovisual translation benchmark equipped with high-quality datasets and an automated-centric evaluation framework.It supports scalable, reproducible comprehensive model evaluation, with supplementary random manual sampling to assess subtle subtitle characteristics including character tone, cultural adaptability and viewing experience. In addition, a professional-grade dataset and evaluation benchmark tailored for audiovisual translation will be open-sourced in the near future. We have released the [benchmark datasets](https://huggingface.co/datasets/xxx) in hugging face.
 
