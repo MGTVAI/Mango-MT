@@ -5,9 +5,9 @@ English | [简体中文](README_CN.md)
 
 
 <div align="center">
-  <img width="114" height="40" alt="c1623a4589e3aeda320771b28fad45e6" src="https://github.com/user-attachments/assets/98eb2d27-b5f0-4e10-9a2f-3282123088e5" />
+  <img width="228" height="80" alt="c1623a4589e3aeda320771b28fad45e6" src="https://github.com/user-attachments/assets/98eb2d27-b5f0-4e10-9a2f-3282123088e5" />
   &nbsp;&nbsp;
-  <img width="169" height="40" alt="image" src="https://github.com/user-attachments/assets/65af3dfd-89ef-4c27-a9b7-439e918bf4a9" />
+  <img width="320" height="80" alt="image" src="https://github.com/user-attachments/assets/65af3dfd-89ef-4c27-a9b7-439e918bf4a9" />
 </div>
 
 
