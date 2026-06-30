@@ -22,7 +22,7 @@
 
 - **2026/06/26** : 🚀 本文提出 Mango-MT，一款面向影视翻译场景、支持 11 门语种的先进大语言翻译模型，综合翻译性能表现优异。Mango-MT 在自研 Mango-SubBench 评测基准上取得当前最优（SoTA）结果；在 Flores + 通用基准中，该模型在绝大多数语种上的效果持平乃至超越各类商用大模型。
   
-- **2026/06/22** : 🔥 我们开源了基于专业影视翻译数据构建的评测基准 Mango-SubBench。
+- **2026/06/22** : 🔥 我们开源了基于专业影视翻译数据构建的评测基准 Mango-SubBench,🤗 [Hugging Face](https://huggingface.co/datasets/MGTV-AI/Mango-SubBench) , 🤖 [ModelScope](https://www.modelscope.cn/datasets/MGTVAI/Mango-SubBench)
 
 
 
