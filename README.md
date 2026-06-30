@@ -185,4 +185,4 @@ If you love open source and enjoy tinkering, whether for learning purposes or to
 Co-founded by Mango TV and Beijing International Studies University, Joint Lab for Intelligent Media Translation aims to build a domestically leading R&D base for intelligent audiovisual translation technologies. Integrating technology research, talent cultivation and achievement commercialization as its core missions, the laboratory focuses on tackling key technical challenges including large-scale audiovisual translation models, dedicated evaluation benchmarks for such models, the construction of audiovisual translation corpora, and cultural compliance localization of translated media content.
 
 # License
-This framework is licensed under the Apache License. For models and datasets, please refer to the original resource page and follow the corresponding License.
+This framework is licensed under the Apache 2.0 License. For models and datasets, please refer to the original resource page and follow the corresponding License.
