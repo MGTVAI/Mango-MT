@@ -1,6 +1,11 @@
 [English](README.md) | 简体中文
 # Mango-MT: A 9B Model Bridging the Gap with Closed-Source Audiovisual MT
 
+<div align="center">
+  <img width="228" height="80" alt="c1623a4589e3aeda320771b28fad45e6" src="https://github.com/user-attachments/assets/98eb2d27-b5f0-4e10-9a2f-3282123088e5" />
+  &nbsp;&nbsp;
+  <img width="320" height="80" alt="image" src="https://github.com/user-attachments/assets/65af3dfd-89ef-4c27-a9b7-439e918bf4a9" />
+</div>
 
 
 <img width="6303" height="1881" alt="f0" src="https://github.com/user-attachments/assets/68f72a09-0d9b-4e95-b9e6-f2a5a4d420e4" />
