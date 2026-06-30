@@ -114,7 +114,7 @@ vllm serve model_dir --port 8000 --tensor-parallel-size 1 --max-model-len 4096 -
 使用下述 Python 脚本调用 Mango-MT 模型完成翻译：
 
 ```
-python /mt/benchmark/translate_with_mango_mt.py --input /mt/benchmark/data/test_corpus.xlsx --output /mt/benchmark/result_1.xlsx
+python /mt/benchmark/translate_with_mango_mt.py --input /mt/benchmark/data/test_corpus.xlsx --output /mt/benchmark/mango.xlsx
 ```
 
 #### 步骤 3
@@ -122,14 +122,14 @@ python /mt/benchmark/translate_with_mango_mt.py --input /mt/benchmark/data/test_
 
 
 ```
-python /mt/benchmark/translate_with_api.py --input /mt/benchmark/data/result_1.xlsx --output /mt/benchmark/result_2.xlsx
+python /mt/benchmark/translate_with_api.py --input /mt/benchmark/data/mango.xlsx --output /mt/benchmark/mango_deepseek_gemini_gpt.xlsx
 ```
 
 #### 步骤 4
 运行以下代码对翻译结果进行评测，输出最终综合得分：
 
 ```
-python /mt/benchmark/evaluate.py --input /mt/benchmark/result_2.xlsx
+python /mt/benchmark/evaluate.py --input /mt/benchmark/mango_deepseek_gemini_gpt.xlsx
 ```
 
 ### 效果 
