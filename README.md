@@ -4,9 +4,12 @@ English | [简体中文](README_CN.md)
 
 </center>
 <img width="114" height="40" alt="c1623a4589e3aeda320771b28fad45e6" src="https://github.com/user-attachments/assets/98eb2d27-b5f0-4e10-9a2f-3282123088e5" />
-<img width="169" height="40" alt="image" src="https://github.com/user-attachments/assets/65af3dfd-89ef-4c27-a9b7-439e918bf4a9" />
+
 </center>
 
+</center>
+<img width="169" height="40" alt="image" src="https://github.com/user-attachments/assets/65af3dfd-89ef-4c27-a9b7-439e918bf4a9" />
+</center>
 
 
 
