@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ```
 
 ## 模型权重
-从 xxx下载
+从 [Hugging Face](https://huggingface.co/MGTV-AI/Mango-MT-9B)下载权重
 
 ## 使用
 
