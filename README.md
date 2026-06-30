@@ -175,8 +175,8 @@ We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro,
 # Contact Us
 If you love open source and enjoy tinkering, whether for learning purposes or to share better ideas, you are welcome to join us, contact with liuxusheng@mgtv.com
 
-# Acknowledgements
-Thanks to the support of subtitle translation from Beijing International Studies University 
+# About Joint Lab for Intelligent Media Translation
+Co-founded by Mango TV and Beijing International Studies University, Joint Lab for Intelligent Media Translation aims to build a domestically leading R&D base for intelligent audiovisual translation technologies. Integrating technology research, talent cultivation and achievement commercialization as its core missions, the laboratory focuses on tackling key technical challenges including large-scale audiovisual translation models, dedicated evaluation benchmarks for such models, the construction of audiovisual translation corpora, and cultural compliance localization of translated media content.
 
 # License
 This framework is licensed under the Apache License. For models and datasets, please refer to the original resource page and follow the corresponding License.
