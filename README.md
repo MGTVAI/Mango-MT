@@ -152,76 +152,25 @@ We evaluate the multilingual translation performance of our model on FLORES+ whi
 The data consists of translations primarily from English into over 200 language varieties. The original English sentences were sampled in equal amounts from [Wikinews](https://en.wikinews.org/wiki/Main_Page) (an international news source), [Wikijunior](https://en.wikibooks.org/wiki/Wikijunior) (a collection of age-appropriate non-fiction books), and [Wikivoyage](https://en.wikivoyage.org/wiki/Main_Page) (a travel guide).
 
 
-### Dependencies
-
-```
-pip install sacrebleu sentencepiece
-```
-### Steps
-#### Step 1
-Download the devtest datasets of following languages from [flores devtest](https://huggingface.co/datasets/openlanguagedata/flores_plus) and put them into reference_data/. 
-
-#### Step 2
-
-Put the downloaded cmn_Hans.jsonl into the src_data/, translate Chinese into 11 languages by using following .py based on our model, the translated results will be saved into the translated_data/:
-
-```
-cd /mt/flores200 && python translate_flores_with_mango_mt.py
-```
-
-Similarly, translate Chinese into 11 languages by using following .py based on gpt, deepseek, gemini, the translated results will be saved into the translated_data/:
-
-```
-cd /mt/flores200 && python translate_flores_with_api.py
-```
-#### Step 3
-we adopt two core universal metrics (BLEU, chrF++ ) to quantify translation quality by using following .py:
-
-```
-python evaluate.py
-```
 
 ### Performance 
-We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4) across 11 languages with two core translation metrics: BLEU (short utterance fluency, core metric for subtitles) and chrF++ (character-level semantic matching).
-
-Evaluation Results on  BLEU:
-|Language|DeepSeek|Gemini|GPT|Mango\-MT|
-|---|---|---|---|---|
-|Russian|21\.11|22\.84|20\.26|**23\.33**|
-|Indonesian|27\.80|28\.85|24\.98|**31\.75**|
-|Japanese|29\.68|**31\.64**|27\.71|30\.99|
-|French|31\.15|32\.84|28\.07|**33\.83**|
-|Thai|10\.40|9\.48|8\.38|**10\.52**|
-|English|33\.76|34\.09|30\.99|**40\.49**|
-|Spanish|21\.10|22\.41|21\.39|**24\.57**|
-|Vietnamese|32\.55|32\.73|30\.08|**34\.23**|
-|Arabic|**16\.12**|17\.30|13\.24|16\.10|
-|Korean|24\.91|**25\.22**|23\.11|24\.48|
-|Malay|23\.43|24\.09|21\.12|**25\.52**|
-|**Macro Average**|24\.73|25\.59|22\.67|**26\.89**|
-
-Evaluation Results on chrF++:
-|Language|DeepSeek|Gemini|GPT|Mango\-MT|
-|---|---|---|---|---|
-|Russian|**48\.23**|49\.85|**48\.23**|48\.30|
-|Indonesian|56\.65|**58\.65**|55\.82|57\.97|
-|Japanese|**30\.40**|30\.08|29\.01|28\.64|
-|French|56\.15|**58\.36**|55\.21|57\.33|
-|Thai|43\.53|**45\.24**|43\.49|42\.83|
-|English|60\.00|61\.00|58\.84|**63\.78**|
-|Spanish|48\.07|49\.28|48\.48|**49\.60**|
-|Vietnamese|53\.08|**54\.42**|52\.55|53\.55|
-|Arabic|45\.37|**47\.26**|43\.59|43\.99|
-|Korean|31\.12|**32\.52**|30\.15|30\.22|
-|Malay|54\.19|**55\.99**|53\.95|54\.25|
-|**Macro Average**|47\.89|**49\.33**|47\.21|48\.23|
+We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro, Gemini-3-pro, GPT-5.4) across 11 languages with two core translation metrics: BLEU and COMET.
 
 
-1. **BLEU (subtitle-focused metric)：**
-   Mango-MT achieves the highest macro average score (26.89), outperforming Gemini (25.59), DeepSeek (24.73) and GPT (22.67). It ranks first on 8 out of 11 languages, especially showing dominant advantages on English and Southeast Asian languages (Indonesian, Thai, Vietnamese, Malay), which fits our subtitle translation scenario perfectly.
+| Models          | Metric | Russian | Indonesian | Japanese | French | Thai   | English | Spanish | Vietnamese | Arabic | Korean | Malay  | Avg    |
+|-----------------|--------|---------|------------|----------|--------|--------|---------|---------|------------|--------|--------|--------|--------|
+| DeepSeek-V4-Pro | BLEU   | 21.110  | 27.800     | 29.680   | 31.150 | 10.400 | 33.760  | 21.100  | 32.550     | 16.120 | 24.910 | 23.430 | 24.730 |
+| DeepSeek-V4-Pro | COMET  | 0.945   | 0.940      | 0.925    | 0.921  | 0.894  | 0.977   | 0.945   | 0.921      | 0.895  | 0.914  | 0.908  | 0.926  |
+| Gemini-3-Pro    | BLEU   | 22.840  | 28.850     | 31.640   | 32.840 | 9.480  | 34.090  | 22.410  | 32.730     | 17.300 | 25.220 | 24.090 | 25.590 |
+| Gemini-3-Pro    | COMET  | 0.948   | 0.943      | 0.930    | 0.924  | 0.903  | 0.977   | 0.948   | 0.930      | 0.903  | 0.919  | 0.914  | 0.931  |
+| GPT-5.4         | BLEU   | 20.260  | 24.980     | 27.710   | 28.070 | 8.380  | 30.990  | 21.390  | 30.080     | 13.240 | 23.110 | 21.120 | 22.670 |
+| GPT-5.4         | COMET  | 0.946   | 0.945      | 0.928    | 0.925  | 0.904  | 0.978   | 0.950   | 0.928      | 0.895  | 0.920  | 0.919  | 0.931  |
+| Mango-MT        | BLEU   | 20.370  | 22.060     | 27.350   | 32.980 | 10.620 | 30.110  | 21.640  | 30.060     | 10.450 | 20.440 | 20.040 | 22.370 |
+| Mango-MT        | COMET  | 0.944   | 0.932      | 0.923    | 0.932  | 0.905  | 0.978   | 0.946   | 0.925      | 0.870  | 0.908  | 0.911  | 0.925  |
 
-2. **chrF++ (fine-grained semantic metric)：**
-   Gemini leads the macro average (49.33), followed by Mango-MT (48.23), DeepSeek (47.89) and GPT (47.21). Our model matches or outperforms commercial models across multiple languages.
+
+
+
 
 # Contact Us
 If you love open source and enjoy tinkering, whether for learning purposes or to share better ideas, you are welcome to join us.
