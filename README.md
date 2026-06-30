@@ -173,7 +173,7 @@ We evaluate our Mango-MT against three commercial large models (DeepSeek-v4-pro,
 
 
 # Contact Us
-If you love open source and enjoy tinkering, whether for learning purposes or to share better ideas, you are welcome to join us.
+If you love open source and enjoy tinkering, whether for learning purposes or to share better ideas, you are welcome to join us, contact with liuxusheng@mgtv.com
 
 # Acknowledgements
 Thanks to the support of subtitle translation from Beijing International Studies University 
