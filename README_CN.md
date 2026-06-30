@@ -169,7 +169,7 @@ python /mt/benchmark/evaluate.py --input /mt/benchmark/mango_deepseek_gemini_gpt
 
 
 # 联系我们
-如果你热爱开源、乐于钻研，无论是出于学习目的，或是希望交流优化思路，都欢迎加入我们。
+如果你热爱开源、乐于钻研，无论是出于学习目的，或是希望交流优化思路，都欢迎加入我们。联系方式：liuxusheng@mgtv.com 。
 
 # 致谢
 感谢北京第二外国语学院为本项目字幕翻译相关工作提供支持
