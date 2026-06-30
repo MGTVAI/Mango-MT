@@ -356,7 +356,7 @@ class ComprehensiveTranslationEvaluator:
         # 计算加权总分
         valid_data["final_score"] = (
             valid_data["semantic_similarity"] * WEIGHTS["semantic_similarity"]
-            + valid_data["bleu_score"] * WEIGHTS["bleu_score"] 
+            + valid_data["bleu_score"] * WEIGHTS["bleu_score"] *2  
             + valid_data["comet_score"] * WEIGHTS["comet_score"]
  
         )
