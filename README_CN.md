@@ -20,7 +20,7 @@
 ## 新闻 🚀🚀🚀
 
 
-- **2026/06/26** : 🚀 本文提出 Mango-MT，一款面向影视翻译场景、支持 11 门语种的先进大语言翻译模型，综合翻译性能表现优异。Mango-MT 在自研 Mango-SubBench 评测基准上取得当前最优（SoTA）结果；在 Flores + 通用基准中，该模型在绝大多数语种上的效果持平乃至超越各类商用大模型。
+- **2026/06/26** : 🚀 本文提出 Mango-MT，一款面向影视翻译场景、支持 11 门语种的先进大语言翻译模型，综合翻译性能表现优异。Mango-MT 在自研 Mango-SubBench 评测基准上取得当前最优（SoTA）结果；在 Flores + 通用基准中，该模型在绝大多数语种上的效果持平乃至超越各类商用大模型。 模型已发布在🤗 [Hugging Face](https://huggingface.co/MGTV-AI/Mango-MT-9B) , 🤖 [ModelScope |](https://www.modelscope.cn/models/MGTVAI/Mango-MT-9B)
   
 - **2026/06/22** : 🔥 我们开源了基于专业影视翻译数据构建的评测基准 Mango-SubBench,🤗 [Hugging Face](https://huggingface.co/datasets/MGTV-AI/Mango-SubBench) , 🤖 [ModelScope](https://www.modelscope.cn/datasets/MGTVAI/Mango-SubBench)
 
@@ -71,7 +71,7 @@ vllm serve model_dir --port 8000 --tensor-parallel-size 1 --max-model-len 4096 -
 ### Mango-SubBench
 
 视听字幕翻译评测更看重长视频全球化出海场景下的实际交付标准，而非单纯追求译文与人工参考译文的字面相似度。合格字幕需要同时满足语义准确、表达自然、断句规范、时间戳有效、质量可追溯多项要求，仅依靠单一自动化指标无法完成完整评估。
-为解决这一局限，我们联合北京第二外国语学院搭建了专用视听翻译评测数据集，配套高质量语料集与一套以自动化评测为核心的完整评测框架。该基准可实现可扩展、可复现的模型综合测评，同时辅以随机人工抽检，用于甄别字幕中人物语气、文化适配度、观影体验等细微文本特征。此外，一个适用于影视专业级的数据集和评估标准将会在未来一段时间开源出来。我们已在hugging face发布 [基准测试集](https://huggingface.co/datasets/MGTV-AI/Mango-SubBench) 
+为解决这一局限，我们联合北京第二外国语学院搭建了专用视听翻译评测数据集，配套高质量语料集与一套以自动化评测为核心的完整评测框架。该基准可实现可扩展、可复现的模型综合测评，同时辅以随机人工抽检，用于甄别字幕中人物语气、文化适配度、观影体验等细微文本特征。此外，一个适用于影视专业级的数据集和评估标准将会在未来一段时间开源出来。
 
 #### 数据集
 
