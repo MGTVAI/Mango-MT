@@ -10,7 +10,7 @@ English | [简体中文](README_CN.md)
 
 # Introduction
 
-Global long-form video expansion requires robust multilingual subtitle translation, but generic MT fails at fragmented lines, timeline constraints and plot context for mass production. We introduce Mango-MT with 9B parameter size, an 11-language audiovisual subtitle translator paired with the benchmark called Mango-SubBench. Evaluations across all languages show it outperforms GPT, Gemini and DeepSeek with steady timeline compliance, consistent semantics and industrial scalability, see the [technical report](Technical_Report.pdf) for details. Our system holds four key advantages over prior work:
+Global long-form video expansion requires robust multilingual subtitle translation, but generic MT fails at fragmented lines, timeline constraints and plot context for mass production. We open-sourced Mango-MT with 9B parameter size, an 11-language audiovisual subtitle translator paired with the benchmark called Mango-SubBench. Evaluations across all languages show it outperforms GPT, Gemini and DeepSeek with steady timeline compliance, consistent semantics and industrial scalability, see the [technical report](Technical_Report.pdf) for details. Our system holds four key advantages over prior work:
 
 - **Scenario-oriented & Multilingual Optimization**: Professionally optimized for 11 different languages, perfectly adapting to complex industrial rules of video subtitle translation.
 - **Context-aware Translation Mechanism**: Leverages global context modeling to stabilize plot logic and consistent character appellation translation.
