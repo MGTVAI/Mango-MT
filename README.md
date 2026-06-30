@@ -21,9 +21,9 @@ Global long-form video expansion requires robust multilingual subtitle translati
 ## News 🚀🚀🚀
 
 
-- **2026/06/26** : 🚀 We introduce Mango-MT, an advanced machine learning large language model (MT) that demonstrates superior overall translation performance on film and television translation for 11 languages. Mango-MT achieves SoTA performance on Mango-SubBench, and our model matches or outperforms commercial models across most languages on Flores+.
+- **2026/06/26** : 🚀 We introduce Mango-MT, an advanced machine learning large language model (MT) that demonstrates superior overall translation performance on film and television translation for 11 languages. Mango-MT achieves SoTA performance on Mango-SubBench, and our model matches or outperforms commercial models across most languages on Flores+. We released the model on  🤗 [Hugging Face](https://huggingface.co/MGTV-AI/Mango-MT-9B) , 🤖 [ModelScope |](https://www.modelscope.cn/models/MGTVAI/Mango-MT-9B)
   
-- **2026/06/22** : 🔥 We open-source the benchamark (Mango-SubBench) constructed on professional film and television translation data.
+- **2026/06/22** : 🔥 We open-source the benchamark (Mango-SubBench) constructed on professional film and television translation data. We released the dataset on 🤗 [Hugging Face](https://huggingface.co/datasets/MGTV-AI/Mango-SubBench) , 🤖 [ModelScope](https://www.modelscope.cn/datasets/MGTVAI/Mango-SubBench)
 
 
 
@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ```
 
 ## Model Weights
-Model checkpoints are accessible from [Hugging Face](https://huggingface.co/MGTV-AI/Mango-MT-9B)
+Model checkpoints are accessible from [Hugging Face](https://huggingface.co/MGTV-AI/Mango-MT-9B) or [Modelscope](https://www.modelscope.cn/models/MGTVAI/Mango-MT-9B)
 
 ## Usage
 
@@ -71,7 +71,7 @@ vllm serve model_dir --port 8000 --tensor-parallel-size 1 --max-model-len 4096 -
 
 ### Mango-SubBench
 
-Audiovisual subtitle translation evaluation prioritizes practical delivery standards for global long-form videos rather than mere similarity to human references. Qualified subtitles require simultaneous compliance with semantic accuracy, natural expression, standardized segmentation, valid timestamps and traceable quality, which cannot be fully assessed by single automatic metrics. To mitigate this limitation, we collaborate with Beijing International Studies University to build a dedicated audiovisual translation benchmark equipped with high-quality datasets and an automated-centric evaluation framework.It supports scalable, reproducible comprehensive model evaluation, with supplementary random manual sampling to assess subtle subtitle characteristics including character tone, cultural adaptability and viewing experience. In addition, a professional-grade dataset and evaluation benchmark tailored for audiovisual translation will be open-sourced in the near future. We have released the [benchmark datasets](https://huggingface.co/datasets/MGTV-AI/Mango-SubBench) in hugging face.
+Audiovisual subtitle translation evaluation prioritizes practical delivery standards for global long-form videos rather than mere similarity to human references. Qualified subtitles require simultaneous compliance with semantic accuracy, natural expression, standardized segmentation, valid timestamps and traceable quality, which cannot be fully assessed by single automatic metrics. To mitigate this limitation, we collaborate with Beijing International Studies University to build a dedicated audiovisual translation benchmark equipped with high-quality datasets and an automated-centric evaluation framework.It supports scalable, reproducible comprehensive model evaluation, with supplementary random manual sampling to assess subtle subtitle characteristics including character tone, cultural adaptability and viewing experience. In addition, a professional-grade dataset and evaluation benchmark tailored for audiovisual translation will be open-sourced in the near future. We have released the benchmark datasets in HF(https://huggingface.co/datasets/MGTV-AI/Mango-SubBench) or [MS](https://www.modelscope.cn/datasets/MGTVAI/Mango-SubBench) in hugging face.
 
 #### dataset
 
