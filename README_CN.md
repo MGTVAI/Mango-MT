@@ -183,5 +183,5 @@ python /mt/benchmark/evaluate.py --input /mt/benchmark/mango_deepseek_gemini_gpt
 # 开源协议
 本框架采用 Apache 2.0 开源许可协议。模型与数据集请查阅对应原始资源页面，并遵守其配套许可协议。
 
-## 星标增长趋势
+# 星标增长趋势
 [![星标趋势图](https://api.star-history.com/svg?repos=MGTVAI/Mango-MT&type=Date)](https://star-history.com/#MGTVAI/Mango-MT&Date)
