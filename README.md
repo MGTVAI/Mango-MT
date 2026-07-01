@@ -186,3 +186,6 @@ Co-founded by Mango TV and Beijing International Studies University, Joint Lab f
 
 # License
 This framework is licensed under the Apache 2.0 License. For models and datasets, please refer to the original resource page and follow the corresponding License.
+
+# Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=MGTVAI/Mango-MT&type=Date)](https://star-history.com/#MGTVAI/Mango-MT&Date)
