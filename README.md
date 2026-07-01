@@ -1,6 +1,6 @@
 English | [简体中文](README_CN.md)
 
-# Mango-MT: A 9B Model Bridging the Gap with Closed-Source Audiovisual MT
+# Mango-MT: Advancing Audiovisual Translation with a 9B Multilingual Model and Expert-Annotated Benchmark
 
 
 
